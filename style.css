@@ -5,7 +5,7 @@ h1{
     border-width: 2px;
     border-color: black;
     margin: auto;
-    padding: 5px 10px;
+    padding: 0px 10px;
 }
 
 button{
@@ -13,6 +13,12 @@ button{
     height: 40px;
     margin: 10px;
     padding: 5px;
+    background-color: rgb(208, 204, 204);
+    border-radius: 7px;
+}
+button:hover{
+    background-color: antiquewhite;
+    transform: scale(1.02);
 }
 .input{
     display: flex;
@@ -27,4 +33,13 @@ body{
 }
 h2{
     margin: 10px;
+    color: rgb(5, 113, 5);
+}
+h4{
+    margin-bottom: 0px;
+}
+@media (max-width:600px) {
+    h1{
+        width: 90%;
+    }
 }
