@@ -69,6 +69,26 @@ function showQuestion (){
 }
 
 showQuestion()
+function SelectedAns(button){
+    let correctAns = data[currentQuestionIndex].answer
+
+    if (button.innerHTML.trim() == correctAns){
+        button.style.backgroundColor = 'green'
+        score ++
+    }
+    else{
+        button.style.backgroundColor = 'red'
+    }
+}
+
+
+function showResult(){
+    document.getElementById('quizBox').style.display = 'none'
+    document.getElementById('resultBox').style.display = 'block'
+    document.getElementById('score').innerHTML = `Your Score is : ${score}/${data.length}`
+}
+
+
 
 function nextQuestion(){
 
@@ -77,8 +97,11 @@ function nextQuestion(){
     document.getElementById('opt2').style.backgroundColor = ''
     document.getElementById('opt3').style.backgroundColor = ''
     document.getElementById('opt4').style.backgroundColor = ''
-    if (currentQuestionIndex < data.length){
+    if (currentQuestionIndex < data.length ){
        showQuestion()
+    }
+    else{
+        showResult()
     }
 
 }
@@ -97,14 +120,11 @@ document.querySelectorAll('.option').forEach(btn =>{
     btn.style.backgroundColor = ''
 })
 
-function SelectedAns(button){
-    let correctAns = data[currentQuestionIndex].answer
-
-    if (button.innerHTML.trim() == correctAns){
-        button.style.backgroundColor = 'green'
-    }
-    else{
-        button.style.backgroundColor = 'red'
-    }
+function RestartQuiz(){
+    document.getElementById('quizBox').style.display = 'block'
+    document.getElementById('resultBox').style.display = 'none'
+    score = 0
+    currentQuestionIndex = 0
+    showQuestion()
 }
-SelectedAns()
+
