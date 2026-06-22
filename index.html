@@ -9,27 +9,31 @@
 <body>
     <h1>
         <div>
-            <h4>Question number</h4>
+            <h4 id="QuesNum">Question number</h4>
         </div>
         <div>
-           <h2>Question area</h2>
+           <h3 id="Ques">Question area</h3>
            <div>
-            <button>
+            <button id="opt1" onclick="SelectedAns(this)" class="option">
                 first option
             </button></br>
-            <button>
+            <button id="opt2" onclick="SelectedAns(this)" class="option">
                 second option
             </button></br>
-            <button>
+            <button id="opt3" onclick="SelectedAns(this)" class="option">
                 third option
             </button></br>
-            <button>
+            <button id="opt4" onclick="SelectedAns(this)" class="option">
                 forth option
             </button></br>
            </div>
            <div class="input">
-            <input placeholder="prev"/>
-            <input placeholder="next"/>
+            <div placeholder="prev" id="prev" class="in">
+                Prev
+            </div>
+            <div placeholder="next" id="next" class="in">
+                Next
+            </div>
            </div>
         </div>
 
